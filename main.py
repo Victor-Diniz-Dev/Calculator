@@ -16,6 +16,24 @@ e.grid(
     pady=2
 )
 
-#
+def botao_div():
+    return    
+
+divide = Button(root,
+                text='÷',
+                padx=40,
+                pady=20,
+                command=botao_div,
+                fg='#FFFFFF',
+                activeforeground='#FFFFFF',
+                bg='#320064',
+                activebackground='#240046',
+                relief=FLAT,
+                font=('futura', 12, 'bold')
+)
+
+divide.grid(row=0, 
+            column=4
+)
 
 root.mainloop()
