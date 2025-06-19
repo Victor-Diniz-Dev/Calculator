@@ -6,6 +6,12 @@ root.geometry('493x380')
 root.minsize(493, 380)
 root.maxsize(493, 380)
 
+numero1 = ''
+div = FALSE 
+multiplica = FALSE
+subtrai = FALSE
+adicao = FALSE
+
 root.configure(background='#282828')
 
 e = Entry(root, width=15, borderwidth=4, relief=FLAT, fg='#FFFFFF', bg='#a7a28f', font=('futura', 25, 'bold'), justify=CENTER)
@@ -16,26 +22,60 @@ e.grid(
     pady=2
 )
 
-def botao_click():
-    return
+def botao_click(num):
+    e.insert(END, num)
 
 def botao_div():
-    return
+    global numero1
+    global div
+    div = TRUE
+    numero1 = e.get()
+    e.delete(0, END)
 
 def botao_multiplica():
-    return
+    global numero1
+    global multiplica
+    multiplica = TRUE
+    numero1 = e.get()
+    e.delete(0, END)
 
 def botao_subtrai():
-    return
+    global numero1
+    global subtrai
+    subtrai = TRUE
+    numero1 = e.get()
+    e.delete(0, END)
 
 def botao_adicao():
-    return
+    global numero1
+    global adicao
+    adicao = TRUE
+    numero1 = e.get()
+    e.delete(0, END)
 
 def botao_limpa():
-    return
+    e.delete(0, END)
 
 def botao_igual():
-    return
+    global adicao
+    global subtrai
+    global div
+    global multiplica
+    numero2 = e.get()
+    e.delete(0, END)
+    
+    if adicao == TRUE:
+        e.insert(0, int(numero1) + int(numero2))
+        adicao = FALSE
+    if multiplica == TRUE:
+        e.insert(0, int(numero1) * int(numero2))
+        multiplica = FALSE
+    if div == TRUE:
+        e.insert(0, int(numero1) / int(numero2))
+        div = FALSE
+    if subtrai == TRUE:
+        e.insert(0, int(numero1) - int(numero2))
+        subtrai = FALSE
 
 divide = Button(root,
                 text='÷',
@@ -250,7 +290,7 @@ limpa = Button(root,
                 relief=FLAT,
                 font=('futura', 12, 'bold')
 )
-limpa.grid(row=4, column=3)
+limpa.grid(row=4, column=4)
 
 igual = Button(root,
                 text='=',
@@ -264,6 +304,6 @@ igual = Button(root,
                 relief=FLAT,
                 font=('futura', 12, 'bold')
 )
-igual.grid(row=4, column=4)
+igual.grid(row=4, column=3)
 
 root.mainloop()
