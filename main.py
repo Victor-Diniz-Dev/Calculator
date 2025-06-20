@@ -2,9 +2,9 @@ from tkinter import *
 
 root = Tk()
 root.title('Calculadora')
-root.geometry('493x380')
-root.minsize(493, 380)
-root.maxsize(493, 380)
+root.geometry('493x355')
+root.minsize(408, 355)
+root.maxsize(408, 355)
 
 numero1 = ''
 div = FALSE 
@@ -79,7 +79,7 @@ def botao_igual():
 
 divide = Button(root,
                 text='÷',
-                padx=40,
+                padx=41,
                 pady=20,
                 command=botao_div,
                 fg='#FFFFFF',
@@ -136,7 +136,7 @@ tres.grid(row=1, column=3)
 
 botao_multiplica = Button(root,
                 text='x',
-                padx=40,
+                padx=41,
                 pady=20,
                 command=botao_multiplica,
                 fg='#FFFFFF',
@@ -193,7 +193,7 @@ seis.grid(row=2, column=3)
 
 menos = Button(root,
                 text='-',
-                padx=41.5,
+                padx=43,
                 pady=20,
                 command=botao_subtrai,
                 fg='#FFFFFF',
@@ -250,7 +250,7 @@ nove.grid(row=3, column=3)
 
 adicao = Button(root,
                 text='+',
-                padx=40,
+                padx=41,
                 pady=20,
                 command=botao_adicao,
                 fg='#FFFFFF',
@@ -266,7 +266,7 @@ adicao.grid(row=3, column=4)
 
 zero = Button(root,
                 text='0',
-                padx=101.5,
+                padx=91,
                 pady=20,
                 command=lambda: botao_click(0),
                 fg='#FFFFFF',
